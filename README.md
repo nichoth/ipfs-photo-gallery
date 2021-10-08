@@ -11,3 +11,30 @@ Install dependencies:
 
 Run app:
 `yarn start`
+
+---------------------------------
+
+## update 7-10-2021
+
+```
+$ npm i
+$ npm start
+```
+
+Starting results in
+
+```
+WebSocket connection to 'wss://webrtc.runfission.com/socket.io/?EIO=3&transport=websocket' failed
+```
+
+```
+Error: Transport (WebRTCStar) could not listen on any available address
+    at c.listen (cdnjs.cloudflare.com/ajax/libs/ipfs/0.51.0/index.min.js:2)
+    at async M._onStarting (cdnjs.cloudflare.com/ajax/libs/ipfs/0.51.0/index.min.js:2)
+    at async M.start (cdnjs.cloudflare.com/ajax/libs/ipfs/0.51.0/index.min.js:2)
+    at async cdnjs.cloudflare.com/ajax/libs/ipfs/0.51.0/index.min.js:2
+    at async Object.create (cdnjs.cloudflare.com/ajax/libs/ipfs/0.51.0/index.min.js:2)
+```
+
+
+
