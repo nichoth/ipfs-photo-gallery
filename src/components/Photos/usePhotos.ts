@@ -72,6 +72,7 @@ function usePhotos(state?: State) {
         }
     }, [publishing])
 
+    // returns 'fetching: false publishing: 0
     React.useEffect(() =>
             console.log(
                 `fetching: ${fetching}`,

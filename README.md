@@ -14,7 +14,7 @@ Run app:
 
 ---------------------------------
 
-## update 7-10-2021
+## update 10-7-2021
 
 ```
 $ npm i
@@ -36,5 +36,17 @@ Error: Transport (WebRTCStar) could not listen on any available address
     at async Object.create (cdnjs.cloudflare.com/ajax/libs/ipfs/0.51.0/index.min.js:2)
 ```
 
+## 10-8-2021
 
+What is going on here?
+
+* try to establish a websocket with 'wss://webrtc.runfission.com/socket.io/'
+* what is `React.FC`?
+
+The `start` script is `"react-scripts start"`. What does this do?
+
+### reeact-scripts
+From https://create-react-app.dev/docs/getting-started/ --
+
+> You don’t need to install or configure tools like webpack or Babel. They are preconfigured and hidden so that you can focus on the code.
 

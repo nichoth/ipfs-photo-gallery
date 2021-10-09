@@ -2,6 +2,12 @@
   "name": "react-ipfs-photo-gallery",
   "version": "0.1.1",
   "private": true,
+  "aliasify": {
+    "aliases": {
+      "react": "preact-compat",
+      "react-dom": "preact-compat"
+    }
+  },
   "dependencies": {
     "@fission-suite/client": "^2.0.5",
     "@material-ui/core": "^4.6.0",
@@ -37,5 +43,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "aliasify": "^2.1.0",
+    "browserify": "^17.0.0"
   }
 }
