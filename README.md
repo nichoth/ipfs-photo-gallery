@@ -50,3 +50,26 @@ From https://create-react-app.dev/docs/getting-started/ --
 
 > You don’t need to install or configure tools like webpack or Babel. They are preconfigured and hidden so that you can focus on the code.
 
+----------------------------------------------
+
+### update webnative to the latest
+
+#### issue 1
+Theres no more `FileContent` in `src/components/Photos/usePhotos`
+```js
+import { FileContent } from 'webnative/ipfs'
+```
+
+What happened to it?
+The path changed -- `'webnative/ipfs/types'`
+
+--------------------------------------------
+
+### errors
+Getting 'Uncaught Error: Module parse failed: Unexpected token (28:16)'
+
+---------------------------------------------------
+
+
+What is really going on here? How does this app work? what does it do? What is `usePhotos` and what does it do? Need to figure out what `FileContent` does.
+

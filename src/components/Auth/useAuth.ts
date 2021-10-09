@@ -16,7 +16,6 @@ function useAuth() {
     React.useEffect(() => {
         async function fetchState() {
             try {
-                // this throws
                 // https://github.com/fission-suite/webnative/blob/main/src/index.ts#L107
                 return await sdk.initialise({
                     permissions: {

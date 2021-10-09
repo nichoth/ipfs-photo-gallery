@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { isAuthSucceeded } from '../Auth/useAuth';
-import { FileContent } from 'webnative/ipfs';
+import { FileContent } from 'webnative/ipfs/types';
 import { State } from 'webnative';
 
 export enum PublishingState {
@@ -18,8 +18,15 @@ function usePhotos(state?: State) {
         if (isAuthSucceeded(state)) {
             return Promise.all(photos.map(async (photo) => {
                 if (state.fs !== undefined && state.fs.appPath !== undefined) {
-                    await state.fs.add(`${state.fs.appPath()}/${photo.name}`, photo)
-                        .then(() => setPhotos(p => [photo, ...p]), console.error)
+                    // https://github.com/fission-suite/webnative/blob/16c7edfbe34377ee6ec8ea378512c7f43102094f/src/fs/filesystem.ts#L218
+                    // `${state.fs.appPath()}/${photo.name}`
+                    await state.fs.add({
+                        file: [`${state.fs.appPath()}/${photo.name}`]
+                    }, photo)
+                        .then(
+                            () => setPhotos(p => [photo, ...p]),
+                            console.error
+                        )
                 }
             }))
         }
@@ -50,7 +57,7 @@ function usePhotos(state?: State) {
                                 .map(async ([name, _]) => {
                                     console.log(_.mtime)
                                     if (state.fs !== undefined && state.fs.appPath !== undefined) {
-                                        await state.fs.cat(`${state.fs.appPath()}/${name}`)
+                                        await state.fs.cat({ file: [`${state.fs.appPath()}/${name}`] })
                                             .then(photo => setPhotos(p => [...p, photo]))
                                     }
                                 })
