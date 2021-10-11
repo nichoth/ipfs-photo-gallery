@@ -73,3 +73,31 @@ Getting 'Uncaught Error: Module parse failed: Unexpected token (28:16)'
 
 What is really going on here? How does this app work? what does it do? What is `usePhotos` and what does it do? Need to figure out what `FileContent` does.
 
+---------------------------------------------------------
+
+## 10-10-2021
+
+```
+./node_modules/keystore-idb/lib/config.js 28:16
+Module parse failed: Unexpected token (28:16)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+|   }
+| 
+>   if (!maybeCfg?.type) {
+|     cfg.type = eccEnabled ? CryptoSystem.ECC : CryptoSystem.RSA;
+|   }
+```
+
+[stackoverflow about this exact thing](https://stackoverflow.com/questions/63423384/you-may-need-an-additional-loader-to-handle-the-result-of-these-loaders)
+
+> The problem is that you're emitting ES2020 to dist/. If you look at the line it's complaining about:
+
+> Your example consumer, the CRA app, is using Babel; although the setup does have the transform for optional chaining, it's only run on the source code for the React app itself, not its dependencies
+
+I tried changing the `target` in keystore-idb to `es6`, and also updating a
+`webnative` fork to depend on it, then depending on my fork of `webnative`
+
+
+

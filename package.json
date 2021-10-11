@@ -13,9 +13,8 @@
     "react-dom": "^16.11.0",
     "react-dropzone": "^10.2.1",
     "react-image-file-resizer": "^0.3.8",
-    "react-scripts": "^4.0.0",
     "typescript": "^3.8.0",
-    "webnative": "^0.28.1"
+    "webnative": "github:nichoth/webnative#main"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-scripts": "^4.0.3"
   }
 }
