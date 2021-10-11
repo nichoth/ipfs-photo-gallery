@@ -14,7 +14,7 @@
     "react-dropzone": "^10.2.1",
     "react-image-file-resizer": "^0.3.8",
     "typescript": "^3.8.0",
-    "webnative": "github:nichoth/webnative#main"
+    "webnative": "^0.28.1"
   },
   "scripts": {
     "start": "react-scripts start",
