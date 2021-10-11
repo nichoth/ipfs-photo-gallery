@@ -96,7 +96,7 @@ You may need an additional loader to handle the result of these loaders.
 
 > Your example consumer, the CRA app, is using Babel; although the setup does have the transform for optional chaining, it's only run on the source code for the React app itself, not its dependencies
 
-I tried changing the `target` in keystore-idb to `es6`, and also updating a
+I tried changing the `target` in keystore-idb to `es2018`, and also updating a
 `webnative` fork to depend on it, then depending on my fork of `webnative`
 
 
