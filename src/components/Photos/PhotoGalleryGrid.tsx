@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Box, ButtonBase, fade, makeStyles } from '@material-ui/core';
-import { FileContent } from 'webnative/ipfs';
+// import { FileContent } from 'webnative/ipfs';
+import { FileContent } from 'webnative/ipfs/types';
 import Resizer from 'react-image-file-resizer';
 
 interface Props {
